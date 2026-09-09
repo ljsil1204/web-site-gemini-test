@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이진실 - 교육대학원생 포트폴리오</title>
+  <meta name="description" content="배움의 본질을 묻고, 가능성을 깨우는 교육을 꿈꿉니다. 교육대학원생 이진실의 단일 페이지 개인 웹사이트">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================
+       CSS Variables & Reset
+       Color Palette: Deep Navy, Warm Gray, Off-White, Soft Gold
+       ========================================================== */
+    :root {
+      --primary-navy: #13273D;
+      --navy-light: #1E3A5F;
+      --navy-subtle: #EDF3F8;
+      --navy-dark: #0D1B2A;
+      
+      --accent-warm: #D97706;
+      --accent-warm-light: #FEF3C7;
+      --accent-teal: #0D9488;
+      
+      --bg-main: #FBFBFA;
+      --bg-card: #FFFFFF;
+      --bg-subtle: #F4F5F6;
+      
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      
+      --border-color: #E2E8F0;
+      --border-focus: #CBD5E1;
+      
+      --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-serif: 'Noto Serif KR', Georgia, serif;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.7;
+      word-break: keep-all;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation Bar */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(251, 251, 250, 0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-avatar-mini {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-title {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.925rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 0.5rem 0.25rem;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-navy);
+    }
+
+    .nav-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.25rem;
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .nav-contact-btn:hover {
+      background: var(--navy-light);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 5rem 0 4.5rem;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-badge-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--navy-subtle);
+      border: 1px solid rgba(19, 39, 61, 0.12);
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--navy-light);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-teal);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .hero-catchphrase {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--accent-warm);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-headline {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-headline .highlight {
+      color: var(--navy-light);
+      border-bottom: 3px solid var(--accent-warm-light);
+    }
+
+    .hero-intro {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      max-width: 620px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      padding: 0.85rem 1.6rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #FFFFFF;
+      color: var(--primary-navy);
+      border: 1px solid var(--border-color);
+      padding: 0.85rem 1.6rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-subtle);
+      border-color: var(--border-focus);
+    }
+
+    /* Hero Profile Card */
+    .hero-profile-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 1.75rem;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+
+    .profile-avatar-circle {
+      width: 104px;
+      height: 104px;
+      margin: 0 auto 1.25rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy-subtle) 0%, #D8E5F0 100%);
+      border: 4px solid #FFFFFF;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .profile-avatar-initials {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .profile-verified-badge {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      background: var(--accent-teal);
+      color: #FFFFFF;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      border: 2px solid #FFFFFF;
+    }
+
+    .profile-name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .profile-eng-name {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tag-chip {
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border-color);
+    }
+
+    .profile-quote-box {
+      background: var(--navy-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      color: var(--navy-light);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* Section Standards */
+    .section-wrap {
+      padding: 5rem 0;
+    }
+
+    .section-wrap.alt-bg {
+      background-color: #FFFFFF;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-category {
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-warm);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      line-height: 1.7;
+    }
+
+    /* About Section */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .about-text-column p {
+      font-size: 1.025rem;
+      color: #334155;
+      line-height: 1.85;
+      margin-bottom: 1.35rem;
+    }
+
+    .about-text-column p:last-child {
+      margin-bottom: 0;
+    }
+
+    .philosophy-card {
+      background: var(--bg-main);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+    }
+
+    .philosophy-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+    }
+
+    .values-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .value-item {
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .value-item:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .value-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.35rem;
+    }
+
+    .value-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .value-eng {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .value-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+
+    .value-quote {
+      font-size: 0.825rem;
+      font-family: var(--font-serif);
+      color: var(--navy-light);
+      font-style: italic;
+    }
+
+    /* Interests & Research Section */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .research-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #CBD5E1;
+    }
+
+    .research-card-top {
+      margin-bottom: 1rem;
+    }
+
+    .research-number {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--navy-light);
+      background: var(--navy-subtle);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+
+    .research-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      line-height: 1.4;
+      margin-bottom: 0.35rem;
+    }
+
+    .research-card-eng {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+      font-weight: 500;
+    }
+
+    .research-summary {
+      font-size: 0.925rem;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .research-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .keyword-badge {
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      font-size: 0.775rem;
+      font-weight: 500;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    .research-questions {
+      border-top: 1px solid var(--border-color);
+      padding-top: 0.85rem;
+      margin-top: auto;
+    }
+
+    .questions-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .question-item {
+      font-size: 0.825rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.35rem;
+    }
+
+    .question-item::before {
+      content: "•";
+      color: var(--accent-warm);
+      font-weight: bold;
+    }
+
+    /* Contact Section */
+    .contact-card-main {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 3.25rem 3rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 3.5rem;
+    }
+
+    .contact-card-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .contact-left h3 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.85rem;
+      color: #FFFFFF;
+    }
+
+    .contact-left p {
+      font-size: 0.975rem;
+      color: #CBD5E1;
+      line-height: 1.75;
+      margin-bottom: 1.85rem;
+    }
+
+    .email-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.8rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    .email-box:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .contact-right {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+    }
+
+    .contact-right-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .social-link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: #E2E8F0;
+      font-size: 0.9rem;
+    }
+
+    .social-link-item:last-child {
+      border-bottom: none;
+    }
+
+    .social-link-item:hover {
+      color: #FFFFFF;
+      padding-left: 0.75rem;
+    }
+
+    .social-label-text {
+      font-size: 0.8rem;
+      color: #94A3B8;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 0;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-motto {
+      font-family: var(--font-serif);
+      color: var(--navy-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .hero-profile-card {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-card-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-headline {
+        font-size: 1.95rem;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero-section {
+        padding: 3rem 0 3.5rem;
+      }
+      .contact-card-main {
+        padding: 2rem 1.5rem;
+      }
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="site-nav" id="top-nav">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-avatar-mini">진</div>
+        <div class="brand-text">
+          <span class="brand-name">이진실</span>
+          <span class="brand-title">교육대학원생</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">소개 및 교육관</a></li>
+        <li><a href="#research" class="nav-link">관심 및 연구 분야</a></li>
+        <li><a href="#contact" class="nav-link">연락처</a></li>
+      </ul>
+      <a href="#contact" class="nav-contact-btn">문의하기</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge-wrap">
+          <span class="hero-badge-dot"></span>
+          <span>교육대학원 교육학과 · 석사과정</span>
+        </div>
+        <div class="hero-catchphrase">모든 배움에는 고유한 온도가 있습니다.</div>
+        <h1 class="hero-headline">
+          안녕하세요, 교육대학원생<br>
+          <span class="highlight">이진실</span>입니다.
+        </h1>
+        <p class="hero-intro">
+          학생 한 사람 한 사람의 눈높이에서 배움의 기쁨을 함께 찾아가는 교육대학원생 이진실입니다. 교육학 이론과 살아있는 교실 현장의 가교가 되어, 더 따뜻하고 공정한 배움의 생태계를 연구하고 실천합니다.
+        </p>
+        <div class="hero-actions">
+          <a href="#about" class="btn-primary">
+            교육 철학 알아보기
+          </a>
+          <a href="#research" class="btn-secondary">
+            연구 관심 분야 보기
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Profile Card -->
+      <aside class="hero-profile-card">
+        <div class="profile-avatar-circle">
+          <span class="profile-avatar-initials">이진실</span>
+          <span class="profile-verified-badge">✓</span>
+        </div>
+        <h2 class="profile-name">이진실</h2>
+        <div class="profile-eng-name">Jin-shil Lee · 교육대학원생</div>
+        <div class="profile-tags">
+          <span class="tag-chip">교육학 석사과정</span>
+          <span class="tag-chip">교수학습설계</span>
+          <span class="tag-chip">에듀테크</span>
+          <span class="tag-chip">포용교육</span>
+        </div>
+        <div class="profile-quote-box">
+          “배움의 주어는 학생이며,<br>교사는 성장을 밝히는 등대입니다.”
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- About Me Section -->
+  <section class="section-wrap alt-bg" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-category">About Me</span>
+        <h2 class="section-title">진심(眞心)과 진실(眞實)이 깃든 교육을 향하여</h2>
+        <p class="section-desc">
+          지식의 주입을 넘어 배움의 이유를 스스로 깨닫는 교실, 한 명의 학생도 뒤처지지 않는 따뜻한 교육 안전망을 지향합니다.
+        </p>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-text-column">
+          <p>
+            교육은 단순히 정형화된 지식을 전달하는 일방향의 과정이 아닙니다. 학생 스스로 질문을 던지고, 자신의 생각에 귀 기울이며, 실패를 두려워하지 않고 세상으로 나아갈 수 있도록 든든한 디딤돌을 놓아주는 일입니다.
+          </p>
+          <p>
+            교육대학원에서 교수-학습 이론과 교육과정 설계, 그리고 급변하는 미래 사회에 요구되는 에듀테크 활용 역량을 학문적으로 체계화하고 있습니다. 교과서 속 문자에 머무르는 이론이 아니라, 교실 속 아이들의 표정과 목소리에 닿는 살아있는 교육 실천을 지향합니다.
+          </p>
+          <p>
+            저마다 다른 출발선과 학습 속도를 지닌 모든 학생들이 소외되지 않고, 자신의 고유한 색깔대로 성장할 수 있는 포용적 교실을 만들어가는 연구자이자 교육자가 되고자 합니다.
+          </p>
+        </div>
+
+        <div class="philosophy-card">
+          <h3 class="philosophy-title">핵심 교육 가치관</h3>
+          <div class="values-list">
+            <div class="value-item">
+              <div class="value-header">
+                <h4 class="value-name">학습자 중심의 공감</h4>
+                <span class="value-eng">Empathy & Learner-Centeredness</span>
+              </div>
+              <p class="value-desc">
+                학생의 현재 위치와 감정에 먼저 귀 기울입니다. 일방적 정답 제시보다 스스로 생각의 매듭을 풀어가는 주체적 탐구 여정을 묵묵히 응원합니다.
+              </p>
+              <div class="value-quote">“배움의 주어는 언제나 학생이어야 합니다.”</div>
+            </div>
+
+            <div class="value-item">
+              <div class="value-header">
+                <h4 class="value-name">이론과 실천의 유기적 결합</h4>
+                <span class="value-eng">Praxis: Theory into Practice</span>
+              </div>
+              <p class="value-desc">
+                탄탄한 교육학적 이론 연구를 바탕으로, 교실 현장의 구체적인 갈등과 수업 고민을 해결할 수 있는 실효성 높은 수업 모형을 탐색합니다.
+              </p>
+              <div class="value-quote">“연구실의 고민은 반드시 교실의 따뜻한 변화로 이어져야 합니다.”</div>
+            </div>
+
+            <div class="value-item">
+              <div class="value-header">
+                <h4 class="value-name">포용과 교육 격차 해소</h4>
+                <span class="value-eng">Equity & Inclusive Education</span>
+              </div>
+              <p class="value-desc">
+                환경과 배경의 차이가 배움의 격차로 이어지지 않도록, 기초학력 안전망과 보편적 학습 설계(UDL)를 통해 누구도 뒤처지지 않는 교실을 지향합니다.
+              </p>
+              <div class="value-quote">“한 명의 아이도 배움의 문턱 앞에서 길을 잃지 않도록 돕습니다.”</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interests & Research Section -->
+  <section class="section-wrap" id="research">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-category">Interests & Research</span>
+        <h2 class="section-title">관심 및 연구 분야</h2>
+        <p class="section-desc">
+          변화하는 시대 속에서도 흔들리지 않는 교육의 가치를 위해, 현장 지향적이고 실천적인 교육학 연구 주제들을 탐색하고 있습니다.
+        </p>
+      </div>
+
+      <div class="research-grid">
+        <!-- 01 -->
+        <article class="research-card">
+          <div class="research-card-top">
+            <span class="research-number">RESEARCH 01</span>
+            <h3 class="research-card-title">역량 중심 교육과정 및 수업·평가 설계</h3>
+            <div class="research-card-eng">Competency-Based Curriculum & Authentic Assessment</div>
+            <p class="research-summary">
+              학생이 배운 지식을 실제 삶의 맥락에서 적용할 수 있도록 돕는 프로젝트 기반 학습(PBL)과 결과 중심이 아닌 성장을 지원하는 과정 중심 평가 모형을 연구합니다.
+            </p>
+          </div>
+          <div class="research-keywords">
+            <span class="keyword-badge">#과정중심평가</span>
+            <span class="keyword-badge">#역량기반수업</span>
+            <span class="keyword-badge">#프로젝트학습(PBL)</span>
+            <span class="keyword-badge">#피드백설계</span>
+          </div>
+          <div class="research-questions">
+            <span class="questions-label">주요 탐구 질문</span>
+            <div class="question-item">단편적 암기를 넘어 실생활 문제 해결 역량을 어떻게 평가할 것인가?</div>
+            <div class="question-item">교실 속 협력 수업에서 학습자의 자기주도성을 증진시키는 발문 전략은 무엇인가?</div>
+          </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="research-card">
+          <div class="research-card-top">
+            <span class="research-number">RESEARCH 02</span>
+            <h3 class="research-card-title">에듀테크 기반 맞춤형 학습과 디지털 리터러시</h3>
+            <div class="research-card-eng">EdTech Integration & Digital Citizenship</div>
+            <p class="research-summary">
+              인공지능(AI)과 상호작용형 디지털 도구를 활용하여 개별 학습자에게 최적화된 학습 경로를 제시하고, 비판적 사고력을 갖춘 디지털 시민성을 함양하는 교육 방안을 모색합니다.
+            </p>
+          </div>
+          <div class="research-keywords">
+            <span class="keyword-badge">#AI코스웨어</span>
+            <span class="keyword-badge">#맞춤형학습</span>
+            <span class="keyword-badge">#디지털시민성</span>
+            <span class="keyword-badge">#교수학습공학</span>
+          </div>
+          <div class="research-questions">
+            <span class="questions-label">주요 탐구 질문</span>
+            <div class="question-item">에듀테크 도구가 교사와 학생 간의 인간적 유대를 어떻게 보완할 수 있는가?</div>
+            <div class="question-item">디지털 전환 시대에 모든 학생에게 공평한 디지털 접근성과 리터러시를 어떻게 보장할 것인가?</div>
+          </div>
+        </article>
+
+        <!-- 03 -->
+        <article class="research-card">
+          <div class="research-card-top">
+            <span class="research-number">RESEARCH 03</span>
+            <h3 class="research-card-title">기초학력 안전망 구축과 포용적 교육(UDL)</h3>
+            <div class="research-card-eng">Educational Equity & Universal Design for Learning</div>
+            <p class="research-summary">
+              다양한 인지적·문화적 배경을 가진 학습자가 동일한 교육 목표에 도달할 수 있도록 다감각적 학습 자료와 보편적 학습 설계(UDL) 원리를 적용한 포용적 교실 환경을 연구합니다.
+            </p>
+          </div>
+          <div class="research-keywords">
+            <span class="keyword-badge">#기초학력보장</span>
+            <span class="keyword-badge">#보편적학습설계(UDL)</span>
+            <span class="keyword-badge">#다문화교육</span>
+            <span class="keyword-badge">#학습부진지원</span>
+          </div>
+          <div class="research-questions">
+            <span class="questions-label">주요 탐구 질문</span>
+            <div class="question-item">학습 부진의 정서적 요인(학습된 무기력)을 교실 내에서 어떻게 조기에 발견하고 회복시킬 것인가?</div>
+            <div class="question-item">다양한 배경을 가진 학생들이 상호 존중하는 통합적 교실 문화를 어떻게 형성할 것인가?</div>
+          </div>
+        </article>
+
+        <!-- 04 -->
+        <article class="research-card">
+          <div class="research-card-top">
+            <span class="research-number">RESEARCH 04</span>
+            <h3 class="research-card-title">교실 심리학과 사회·정서 학습(SEL)</h3>
+            <div class="research-card-eng">Classroom Psychology & Social-Emotional Learning</div>
+            <p class="research-summary">
+              학업 성취의 든든한 밑거름이 되는 심리적 안정감과 회복탄력성을 높이기 위해, 자기인식·관계형성 역량을 기르는 사회·정서 학습(SEL) 프로그램을 교과 수업과 연계하여 탐구합니다.
+            </p>
+          </div>
+          <div class="research-keywords">
+            <span class="keyword-badge">#사회정서학습(SEL)</span>
+            <span class="keyword-badge">#회복탄력성</span>
+            <span class="keyword-badge">#교실공동체</span>
+            <span class="keyword-badge">#관계성형성</span>
+          </div>
+          <div class="research-questions">
+            <span class="questions-label">주요 탐구 질문</span>
+            <div class="question-item">경쟁 중심 분위기를 협력과 심리적 안전감이 공존하는 교실 생태계로 전환하는 방법은 무엇인가?</div>
+            <div class="question-item">교사의 긍정적 지지 발문이 학생의 학업적 자기효능감에 미치는 영향은 어떠한가?</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section-wrap" id="contact">
+    <div class="container">
+      <div class="contact-card-main">
+        <div class="contact-card-grid">
+          <div class="contact-left">
+            <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-warm); display: block; margin-bottom: 0.4rem;">Get in Touch</span>
+            <h3>배움과 성장의 대화를 언제나 환영합니다</h3>
+            <p>
+              교육대학원 학업과 연구, 수업 설계 협업, 또는 교육적 가치에 대한 진솔한 이야기를 나누고 싶으신 분들은 언제든 편하게 연락해 주세요.
+            </p>
+            <a href="mailto:leetruth1204@gmail.com" class="email-box">
+              <span>✉</span>
+              <span>leetruth1204@gmail.com</span>
+            </a>
+          </div>
+
+          <div class="contact-right">
+            <div class="contact-right-title">학술 활동 & 네트워크</div>
+            <div class="social-links-list">
+              <a href="mailto:leetruth1204@gmail.com" class="social-link-item">
+                <span>이메일 문의</span>
+                <span class="social-label-text">leetruth1204@gmail.com →</span>
+              </a>
+              <a href="https://velog.io" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                <span>학술 블로그 / 연구 노트</span>
+                <span class="social-label-text">교육학 탐구 일지 →</span>
+              </a>
+              <a href="https://notion.so" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                <span>연구 포트폴리오 (Notion)</span>
+                <span class="social-label-text">포트폴리오 워크스페이스 →</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                <span>LinkedIn 프로필</span>
+                <span class="social-label-text">Jin-shil Lee →</span>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                <span>교육자료 저장소 (GitHub)</span>
+                <span class="social-label-text">Teaching Repo →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div>
+            <strong>이진실</strong> · 교육대학원 교육학과 석사과정
+          </div>
+          <div class="footer-motto">
+            “진실한 마음으로 교육의 내일을 밝힙니다.”
+          </div>
+          <div>
+            &copy; 2026 이진실 (Jin-shil Lee). All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </section>
+</body>
+</html>

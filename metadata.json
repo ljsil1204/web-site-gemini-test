@@ -1,0 +1,6 @@
+{
+  "name": "이진실 - 교육대학원생 포트폴리오",
+  "description": "교육의 본질과 미래를 탐구하는 교육대학원생 이진실의 단일 페이지 개인 웹사이트",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
